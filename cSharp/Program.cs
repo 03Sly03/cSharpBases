@@ -106,3 +106,23 @@ Voir => https://learn.microsoft.com/fr-fr/dotnet/csharp/language-reference/keywo
 const double Pi = 3.14159;
 
 Console.WriteLine(age + " " + myAge + Pi);
+
+/*
+ Les opérateurs:
+arithmétiques
+d'affectation
+=> Voir support m2i IntroductionCSharp page 31
+ */
+
+double testEntier = 5;
+testEntier /= 2;
+Console.WriteLine(testEntier);
+
+/*
+ Les chaînes de caractère (string):
+sont de type "référence".
+Lors d'une déclaration d'une string, on déclare une référence à une sorte de tableau de caractères (char). On peut donc interroger ce tableau à un numéro de cellule.
+ */
+
+string firstname = "Edwardo";
+Console.WriteLine(firstname[2]);
