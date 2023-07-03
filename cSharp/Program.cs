@@ -1,4 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿// ( A découper dans des fichiers séparés )
 
 // LES VARIABLES
 
