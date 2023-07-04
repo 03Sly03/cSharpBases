@@ -126,3 +126,38 @@ Lors d'une déclaration d'une string, on déclare une référence à une sorte d
 
 string firstname = "Edwardo";
 Console.WriteLine(firstname[2]);
+
+/*
+ * Le 04/07/2023
+ Le cast de type:
+convertir le type d'une variable en un autre type. 2 possibilités:
+*/
+
+/*
+- soit les types sont compatibles (short en int)
+casting implicite (le compilateur le fait pour nous)
+*/
+short @short = 200;
+int @int1 = @short;
+Console.WriteLine(@int1); // Affichera 200
+// Ici rentrer un petit chiffre dans un grand se fait sons efforts, par contre la réciproque n'est pas vraie. Pour caster untype plus grand dans un plus petit il faudra enmployer un casting explicite
+int @int2 = 200;
+short @short2 = (short) @int2;
+Console.WriteLine(@short2); // Affichera 200. Un casting explicite indique au compilateur que vous savez parfaitement ce que vous faites.
+
+/*
+Debuger:
+
+ */
+
+/*
+- soit les types sont incompatibles (string en int)
+Grâce à la classe Convert
+ */
+
+string chaineAge = "20";
+int age2 = Convert.ToInt32(chaineAge);
+int age3 = int.Parse(chaineAge);
+Console.WriteLine($"chaineAge convertie en int :  {age2} et {age3}");
+
+// D'autres méthodes de conversion => https://learn.microsoft.com/fr-fr/dotnet/csharp/programming-guide/types/how-to-convert-a-string-to-a-number
