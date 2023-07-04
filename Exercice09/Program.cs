@@ -21,4 +21,4 @@ while (i < annees - 1)
 };
 */
 double montantInterets = capitalFinal - capital;
-Console.WriteLine($"\nle montant des intérêts sera de {montantInterets} Euros après {annees} ans\nLe capital final sera de {capitalFinal} Euros");
+Console.WriteLine($"\nle montant des intérêts sera de {Math.Round(montantInterets, 2)} Euros après {annees} ans\nLe capital final sera de {Math.Round(capitalFinal, 2)} Euros");
