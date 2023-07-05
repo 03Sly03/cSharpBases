@@ -161,3 +161,32 @@ int age3 = int.Parse(chaineAge);
 Console.WriteLine($"chaineAge convertie en int :  {age2} et {age3}");
 
 // D'autres méthodes de conversion => https://learn.microsoft.com/fr-fr/dotnet/csharp/programming-guide/types/how-to-convert-a-string-to-a-number
+
+// SWITCH CASE
+
+string civilite = "M.";
+switch (civilite)
+{
+    case "M.":
+        Console.WriteLine("Bonjour monsieur");
+        break;
+    case "Mme":
+        Console.WriteLine("Bonjour madame");
+        break;
+    case "Mlle":
+        Console.WriteLine("Bonjour mademoiselle");
+        break;
+}
+
+
+// un cas particulié :
+int anInt = 90;
+switch (anInt)
+{
+    case < 3 or > 120:
+        Console.WriteLine("C'est pas entre 3 et 120");
+        break;
+    case < 18 :
+        Console.WriteLine("Bonjour madame");
+        break;
+}
