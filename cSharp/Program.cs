@@ -190,3 +190,11 @@ switch (anInt)
         Console.WriteLine("Bonjour madame");
         break;
 }
+
+// NULL COALESING OPERATOR
+
+string age = null ?? "saisie vide !";
+// Cest pareil que
+string? variable = "Ma variable"; // ça peut être null ou être une chaîne de caractère. La variable est nullable.
+variable = null;
+string myAge3 = variable == null ? "saisie vide !" : variable;

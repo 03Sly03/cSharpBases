@@ -8,7 +8,7 @@ Console.Write("Entrez le nombre d'enfants au foyer : ");
 int nbEnfant = int.Parse(Console.ReadLine());
 
 double montant = 0;
-
+/*
 if (nbAns >= 1 && nbAns < 10)
     indemnite = salaire / 2 * nbAns;
 else if (nbAns > 10)
@@ -20,3 +20,4 @@ else if (age >= 50)
     indemnite += salaire * 5;
 
 Console.WriteLine($"\nVous allez payer : {montant}");
+*/
