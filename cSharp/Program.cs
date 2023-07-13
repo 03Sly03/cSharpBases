@@ -11,6 +11,8 @@ Un mot réservé du C# peut être utilisé comme identificateur de variable à c
 Exemples:
 */
 
+using System.Runtime.InteropServices.ObjectiveC;
+
 int NbLignes = 15;
 string NBEcoles = "M2i Formation";
 int @int = 45;
@@ -193,8 +195,96 @@ switch (anInt)
 
 // NULL COALESING OPERATOR
 
-string age = null ?? "saisie vide !";
+string ageeu = null ?? "saisie vide !";
 // Cest pareil que
 string? variable = "Ma variable"; // ça peut être null ou être une chaîne de caractère. La variable est nullable.
 variable = null;
 string myAge3 = variable == null ? "saisie vide !" : variable;
+
+// petite fonction pour afficher les tableaux
+
+void consoleTab(object[] array)
+{
+    Type isString = typeof(String);
+    Console.Write("[");
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].GetType().Equals(isString))
+        {
+            if (i == array.Length - 1)
+                Console.WriteLine($"\"{array[i]}\"]");
+            else
+                Console.Write($"\"{array[i]}\", ");
+        }
+        else
+        {
+            if (i == array.Length - 1)
+                Console.WriteLine($"{array[i]}]");
+            else
+                Console.Write($"{array[i]}, ");
+        }
+    }
+}
+
+// LES TABLEAUX
+string[] firstnames = new string[3] {"Antho", "Slim", "Malik"};
+string[] names = new string[] { "un", "deux", "trois" };
+string[] nicknames = { "haha", "hoho", "héhé" };
+
+consoleTab(firstnames);
+
+object[] tabs = new object[3] { "haha", 15, "hhé" };
+
+consoleTab(tabs);
+
+// Fonctions
+
+    // ref
+double additionner10(ref double nombreUn)
+{
+    nombreUn += 10;
+    return nombreUn;
+}
+
+double varDeux = 2;
+double resultat = additionner10(ref varDeux);
+Console.WriteLine(varDeux + " / " + resultat);
+
+// in (on peut pas modifier la variable)
+/*double additionner11(in double nombreUn)
+{
+    nombreUn += 10;
+    return nombreUn;
+}
+
+double varDeu = 2;
+double result = additionner11(in varDeu);
+Console.WriteLine(varDeux + " / " + result);
+*/
+
+// out (c'est la sortie)
+/*double additionner12(out double nombreUn)
+{
+    nombreUn += 10;
+    return nombreUn;
+}
+
+double varDe = 2;
+double resul = additionner12(out varDe);
+Console.WriteLine(varDeux + " / " + resul);
+*/
+
+// params
+string Concataineur(int numero, params string[] chaines)
+{
+    string chainefinale = numero + " - ";
+    foreach (var chaine in chaines)
+    {
+        chainefinale += chaine;
+    }
+    return chainefinale;
+}
+string[] mesChaines = { "Bonjour", "Tout", "Le Monde" };
+
+Console.WriteLine(Concataineur(1, mesChaines));
+Console.WriteLine(Concataineur(2, "Bonjour", "Tout", "Le Monde"));
